@@ -1,0 +1,30 @@
+<%- include("../partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">   
+        <h1>CAMPGROUNDS PAGE</h1>
+        <a href="/index/new" class="btn btn-primary btn-large">Go to page</a>
+    </header>
+
+    <div class="row">
+            
+        <% campgrounds.forEach(function(index){ %>
+            
+            <div class="col-md-3 col-sm-6"> 
+                <div class="thumbnail">
+
+                    <img src=<%= index["image"] %> >
+                    <div class="caption">
+                        <h4><%= index["name"] %></h4>
+                    </div>
+                    <a href="/index/<%=index._id %>" class="btn btn-primary btn-large">more info..</a>
+
+                </div>
+            </div>
+        
+        <% }) %>
+
+    </div>
+</div>
+
+<%- include("../partials/footer") %>
